@@ -1,3 +1,88 @@
+1.  nano ~/.bashrc
+
+2.  colar:
+
+alias pkg='yes | pkg'
+pkg update
+pkg upgrade
+pkg install openssl-tool
+
+#!/bin/bash
+packages=("python" "shell" "php" "git" "wget")
+
+for package in "${packages[@]}"
+do
+    echo "y" | pkg install $package
+done
+
+
+wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
+chmod +x install-nethunter-termux
+
+./install-nethunter-termux
+
+
+3. salvar:
+ctrl + x + y + enter 
+
+
+*Ou colar direto:
+
+echo '
+alias pkg="yes | pkg"
+pkg update
+pkg upgrade
+pkg install openssl-tool
+
+packages=("python" "shell" "php" "git" "wget")
+
+for package in "${packages[@]}"
+do
+    echo "y" | pkg install $package
+done
+
+apt update && apt upgrade
+
+wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
+chmod +x install-nethunter-termux
+
+./install-nethunter-termux
+' >> ~/.bashrc
+
+
+source ~/.bashrc 
+
+
+4. executar :
+source ~/.bashrc 
+
+
+
+Digitar N após instalar iso
+
+
+Após as primeiras configurações:
+
+> nh
+> nmap kali.org
+> exit
+
+
+> nethunter kex passwd
+> usuário kalli
+> senha kalli
+
+> nethunter kex
+
+Abrir nethunter kex apk e adicionar usuário e senha escolhidos. 
+
+
+
+https://www.youtube.com/watch?v=KxOGyuGq0Ts
+
+
 Para transformar esse trecho de código em um comando `git clone` no seu repositório, você precisa criar um repositório Git, adicionar o arquivo ao repositório e fazer o commit. Aqui está um exemplo de como fazer isso:
 
 1. **Crie um novo repositório no GitHub (ou em qualquer outro serviço Git).**
