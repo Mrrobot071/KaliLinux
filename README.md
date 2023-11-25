@@ -4,35 +4,86 @@ This script automates the installation of Kali Linux on Termux, making it quick 
 
 ## Instructions
 
-1. Run the following commands in your Termux terminal:
+1.  nano ~/.bashrc
 
-```bash
-echo '
-alias pkg="yes | pkg"
+2.  colar:
+
+alias pkg='yes | pkg'
 pkg update
 pkg upgrade
-apt update && apt upgrade 
 pkg install openssl-tool
 
-packages=("wget")
+#!/bin/bash
+packages=("python" "shell" "php" "git" "wget")
 
 for package in "${packages[@]}"
 do
     echo "y" | pkg install $package
 done
 
-pkg install wget proot -y && wget https://raw.githubusercontent.com/MasterDevX/KaliTermux/master/InstallKali.sh && bash InstallKali.sh
 
-./start-kali.sh
+wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
+chmod +x install-nethunter-termux
+
+./install-nethunter-termux
+
+
+3. salvar:
+ctrl + x + y + enter 
+
+
+*Ou colar direto:
+
+echo '
+alias pkg="yes | pkg"
+pkg update
+pkg upgrade
+pkg install openssl-tool
+
+packages=("python" "shell" "php" "git" "wget")
+
+for package in "${packages[@]}"
+do
+    echo "y" | pkg install $package
+done
+
+apt update && apt upgrade
+
+wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
+chmod +x install-nethunter-termux
+
+./install-nethunter-termux
 ' >> ~/.bashrc
 
-source ~/.bashrc
-```
 
-2. The script will automatically update packages, install necessary tools, and set up Kali Linux for Termux.
+source ~/.bashrc 
 
-3. Once completed, run `./start-kali.sh` to start Kali Linux in your Termux environment.
 
-Note: Ensure that your device is connected to the internet during the installation process.
+4. executar :
+source ~/.bashrc 
 
-**Disclaimer:** Use this script responsibly and in compliance with applicable laws and regulations. The author is not responsible for any misuse or damage caused by this script.
+
+
+Digitar N após instalar iso
+
+
+Após as primeiras configurações:
+
+> nh
+> nmap kali.org
+> exit
+
+
+> nethunter kex passwd
+> usuário kalli
+> senha kalli
+
+> nethunter kex
+
+Abrir nethunter kex apk e adicionar usuário e senha escolhidos. 
+
+
+
+https://www.youtube.com/watch?v=KxOGyuGq0Ts
