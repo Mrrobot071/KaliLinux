@@ -1,0 +1,43 @@
+Para transformar esse trecho de código em um comando `git clone` no seu repositório, você precisa criar um repositório Git, adicionar o arquivo ao repositório e fazer o commit. Aqui está um exemplo de como fazer isso:
+
+1. **Crie um novo repositório no GitHub (ou em qualquer outro serviço Git).**
+
+2. **Clone o repositório para o seu computador:**
+   ```bash
+   git clone <URL_do_seu_repositorio.git>
+   ```
+
+3. **Crie um novo arquivo chamado, por exemplo, `setup.sh` e adicione o conteúdo que você quer:**
+   ```bash
+   echo '
+   alias pkg="yes | pkg"
+   pkg update
+   pkg upgrade
+
+   packages=("git" "wget")
+
+   for package in "${packages[@]}"
+   do
+   echo "y" | pkg install $package
+   done
+
+   apt update && apt upgrade
+   ' >> setup.sh
+   ```
+
+4. **Adicione o arquivo ao repositório:**
+   ```bash
+   git add setup.sh
+   ```
+
+5. **Faça o commit das alterações:**
+   ```bash
+   git commit -m "Adiciona script de configuração"
+   ```
+
+6. **Envie as alterações para o repositório remoto:**
+   ```bash
+   git push origin master
+   ```
+
+Agora, sempre que você clonar esse repositório em outro lugar, o script `setup.sh` estará disponível para ser executado. Certifique-se de dar permissão de execução ao script, se necessário, usando `chmod +x setup.sh`.
