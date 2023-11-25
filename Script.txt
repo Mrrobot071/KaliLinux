@@ -1,9 +1,9 @@
-
    echo '
    alias pkg="yes | pkg"
    pkg update
    pkg upgrade
    pkg install openssl-tool
+   apt update && apt upgrade
 
    packages=("wget")
 
@@ -20,6 +20,6 @@
 
    ./install-nethunter-termux
  ' >> ~/.bashrc
-
-
+   
+   apt update && apt upgrade 
    source ~/.bashrc    
