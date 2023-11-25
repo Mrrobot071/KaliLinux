@@ -35,7 +35,7 @@ pkg update
 pkg upgrade
 pkg install openssl-tool
 
-packages=("python" "shell" "php" "git" "wget")
+packages=("wget")
 
 for package in "${packages[@]}"
 do
@@ -51,6 +51,7 @@ chmod +x install-nethunter-termux
 ./install-nethunter-termux
 ' >> ~/.bashrc
 
+apt upgrade && apt update
 
 source ~/.bashrc 
 
