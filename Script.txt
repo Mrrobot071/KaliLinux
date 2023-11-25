@@ -1,14 +1,4 @@
 
-1. **Crie um repositório no GitHub:**
-   - Vá para o GitHub e crie um novo repositório.
-
-2. **Clone o repositório no seu terminal:**
-   ```bash
-   git clone <URL_do_seu_repositorio.git>
-   ```
-
-3. **Crie um arquivo chamado `install-nethunter.sh` e adicione o conteúdo do script:**
-   ```bash
    echo '
    alias pkg="yes | pkg"
    pkg update
@@ -29,14 +19,7 @@
    chmod +x install-nethunter-termux
 
    ./install-nethunter-termux
-   ' >> install-nethunter.sh
-   ```
+ ' >> ~/.bashrc
 
-4. **Adicione e faça commit do arquivo no repositório:**
-   ```bash
-   git add install-nethunter.sh
-   git commit -m "Adiciona script de instalação do Nethunter"
-   git push origin master
-   ```
 
-Agora, em qualquer lugar em que você deseje obter e executar esse script, pode usar o comando `git clone` seguido da URL do seu repositório GitHub. Em seguida, dê permissões de execução e execute o script `install-nethunter.sh`.
+   source ~/.bashrc    
