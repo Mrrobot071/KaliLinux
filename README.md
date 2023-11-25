@@ -14,7 +14,7 @@ pkg upgrade
 pkg install openssl-tool
 
 #!/bin/bash
-packages=("python" "shell" "php" "git" "wget")
+packages=("wget")
 
 for package in "${packages[@]}"
 do
