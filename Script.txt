@@ -15,8 +15,7 @@
        echo "y" | pkg install $package
    done
 
-   pkg install openssl-tool
-
+   
    pkg install wget -y
    
    wget -O install-nethunter-termux https://offs.ec/2MceZWr
@@ -26,5 +25,4 @@
    ./install-nethunter-termux
  ' >> ~/.bashrc
    
-   apt update && apt upgrade 
    source ~/.bashrc    
