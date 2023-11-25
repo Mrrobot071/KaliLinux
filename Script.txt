@@ -4,8 +4,16 @@ O código fornecido parece ser destinado à instalação do Nethunter no Termux.
 # Adicionar aliases úteis ao ~/.bashrc
 echo '
 alias pkg="yes | pkg"
-alias update="pkg update && pkg upgrade"
-alias install="echo \"y\" | pkg install"
+pkg update
+pkg upgrade
+pkg install openssl-tool
+
+packages=("wget")
+
+for package in "${packages[@]}"
+do
+    echo "y" | pkg install $package
+done
 ' >> ~/.bashrc 
 
 # Atualizar e atualizar pacotes
