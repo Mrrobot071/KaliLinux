@@ -15,13 +15,9 @@
    done
 
    
-   pkg install wget -y
-   
-   wget -O install-nethunter-termux https://offs.ec/2MceZWr
+   pkg install wget proot -y && wget https://raw.githubusercontent.com/MasterDevX/KaliTermux/master/InstallKali.sh && bash InstallKali.sh
 
-   chmod +x install-nethunter-termux
-
-   ./install-nethunter-termux
+   x
  ' >> ~/.bashrc
    
    source ~/.bashrc    
