@@ -1,5 +1,4 @@
-   1. termux-change-repo
-   2. Game, 3. A1batross
+   1. termux-change-repo, 2. Game, 3. A1batross
 
    echo '
    alias pkg="yes | pkg"
