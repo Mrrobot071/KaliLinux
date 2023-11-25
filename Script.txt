@@ -4,6 +4,7 @@
    pkg upgrade
    pkg install openssl-tool
    apt update && apt upgrade
+   pkg install wget 
 
    packages=("wget")
 
