@@ -1,4 +1,3 @@
-Peço desculpas pela confusão. Se você deseja transformar o trecho de código em um comando `git clone`, você pode seguir estas etapas:
 
 1. **Crie um repositório no GitHub:**
    - Vá para o GitHub e crie um novo repositório.
