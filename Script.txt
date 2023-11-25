@@ -1,204 +1,43 @@
-O código fornecido parece ser destinado à instalação do Nethunter no Termux. No entanto, há algumas observações para torná-lo mais eficiente e legível:
+Peço desculpas pela confusão. Se você deseja transformar o trecho de código em um comando `git clone`, você pode seguir estas etapas:
 
-```bash
-# Adicionar aliases úteis ao ~/.bashrc
-echo '
-alias pkg="yes | pkg"
-pkg update
-pkg upgrade
-pkg install openssl-tool
+1. **Crie um repositório no GitHub:**
+   - Vá para o GitHub e crie um novo repositório.
 
-packages=("wget")
-
-for package in "${packages[@]}"
-do
-    echo "y" | pkg install $package
-done
-' >> ~/.bashrc 
-
-# Atualizar e atualizar pacotes
-pkg update && pkg upgrade
-
-# Instalar ferramentas necessárias
-pkg install openssl-tool wget
-
-# Atualizar o sistema (dependendo do sistema operacional)
-apt update && apt upgrade
-
-# Baixar script de instalação do Nethunter
-wget -O install-nethunter-termux https://offs.ec/2MceZWr
-
-# Dar permissões de execução ao script
-chmod +x install-nethunter-termux
-
-# Executar script de instalação do Nethunter
-./install-nethunter-termux
-
-
-# Recarregar o ~/.bashrc
-source ~/.bashrc
-```
-
-Essas alterações ajudam a organizar o código e adicionam alguns aliases úteis ao seu arquivo `~/.bashrc`. Certifique-se de entender completamente o que o script está fazendo antes de executá-lo, especialmente ao instalar ferramentas e scripts de terceiros.
-
-
-1.  nano ~/.bashrc
-
-2.  colar:
-
-alias pkg='yes | pkg'
-pkg update
-pkg upgrade
-pkg install openssl-tool
-
-#!/bin/bash
-packages=("python" "shell" "php" "git" "wget")
-
-for package in "${packages[@]}"
-do
-    echo "y" | pkg install $package
-done
-
-
-wget -O install-nethunter-termux https://offs.ec/2MceZWr
-
-chmod +x install-nethunter-termux
-
-./install-nethunter-termux
-
-
-3. salvar:
-ctrl + x + y + enter 
-
-
-*Ou colar direto:
-
-echo '
-alias pkg="yes | pkg"
-pkg update
-pkg upgrade
-pkg install openssl-tool
-
-packages=("wget")
-
-for package in "${packages[@]}"
-do
-    echo "y" | pkg install $package
-done
-
-apt update && apt upgrade
-
-wget -O install-nethunter-termux https://offs.ec/2MceZWr
-
-chmod +x install-nethunter-termux
-
-./install-nethunter-termux
-' >> ~/.bashrc
-
-apt upgrade && apt update
-
-source ~/.bashrc 
-
-
-4. executar :
-source ~/.bashrc 
-
-
-
-Digitar N após instalar iso
-
-
-Após as primeiras configurações:
-
-> nh
-> nmap kali.org
-> exit
-
-
-> nethunter kex passwd
-> usuário kalli
-> senha kalli
-
-> nethunter kex
-
-Abrir nethunter kex apk e adicionar usuário e senha escolhidos. 
-
-
-
-https://www.youtube.com/watch?v=KxOGyuGq0Ts
-
-
-Para transformar esse trecho de código em um comando `git clone` no seu repositório, você precisa criar um repositório Git, adicionar o arquivo ao repositório e fazer o commit. Aqui está um exemplo de como fazer isso:
-
-1. **Crie um novo repositório no GitHub (ou em qualquer outro serviço Git).**
-
-2. **Clone o repositório para o seu computador:**
+2. **Clone o repositório no seu terminal:**
    ```bash
    git clone <URL_do_seu_repositorio.git>
    ```
 
-3. **Crie um novo arquivo chamado, por exemplo, `setup.sh` e adicione o conteúdo que você quer:**
+3. **Crie um arquivo chamado `install-nethunter.sh` e adicione o conteúdo do script:**
    ```bash
    echo '
    alias pkg="yes | pkg"
    pkg update
    pkg upgrade
+   pkg install openssl-tool
 
-   packages=("git" "wget")
+   packages=("wget")
 
    for package in "${packages[@]}"
    do
-   echo "y" | pkg install $package
+       echo "y" | pkg install $package
    done
 
    apt update && apt upgrade
-   ' >> setup.sh
+
+   wget -O install-nethunter-termux https://offs.ec/2MceZWr
+
+   chmod +x install-nethunter-termux
+
+   ./install-nethunter-termux
+   ' >> install-nethunter.sh
    ```
 
-4. **Adicione o arquivo ao repositório:**
+4. **Adicione e faça commit do arquivo no repositório:**
    ```bash
-   git add setup.sh
-   ```
-
-5. **Faça o commit das alterações:**
-   ```bash
-   git commit -m "Adiciona script de configuração"
-   ```
-
-6. **Envie as alterações para o repositório remoto:**
-   ```bash
+   git add install-nethunter.sh
+   git commit -m "Adiciona script de instalação do Nethunter"
    git push origin master
    ```
 
-Agora, sempre que você clonar esse repositório em outro lugar, o script `setup.sh` estará disponível para ser executado. Certifique-se de dar permissão de execução ao script, se necessário, usando `chmod +x setup.sh`.
-
-Para executar um arquivo chamado `setup.sh` no Termux, siga esses passos:
-
-1. **Navegue até o diretório do arquivo:**
-   Use o comando `cd` para navegar até o diretório onde o arquivo `setup.sh` está localizado. Por exemplo:
-
-   ```bash
-   cd caminho/do/diretorio
-   ```
-
-   Substitua "caminho/do/diretorio" pelo caminho real onde o arquivo está.
-
-2. **Conceda permissões de execução:**
-   Certifique-se de que o arquivo `setup.sh` tem permissões de execução. Você pode conceder permissões com o seguinte comando:
-
-   ```bash
-   chmod +x setup.sh
-   ```
-
-   Isso permite a execução do script.
-
-3. **Execute o script:**
-   Agora, você pode executar o script usando o seguinte comando:
-
-   ```bash
-   ./setup.sh
-   ```
-
-   Certifique-se de incluir o caminho completo se não estiver no mesmo diretório que o script.
-
-Lembre-se de que o Termux oferece um ambiente Linux no Android, portanto, os comandos são semelhantes aos do Linux. Se o script tiver dependências ou requisitos específicos, certifique-se de atendê-los antes de executar o script.
+Agora, em qualquer lugar em que você deseje obter e executar esse script, pode usar o comando `git clone` seguido da URL do seu repositório GitHub. Em seguida, dê permissões de execução e execute o script `install-nethunter.sh`.
