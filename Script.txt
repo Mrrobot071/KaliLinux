@@ -1,11 +1,13 @@
+   1. termux-change-repo
+   2. A1batross
+
    echo '
    alias pkg="yes | pkg"
    pkg update
    pkg upgrade
+   apt update && apt upgrade 
    pkg install openssl-tool
-   apt update && apt upgrade
    
-
    packages=("wget")
 
    for package in "${packages[@]}"
@@ -13,7 +15,7 @@
        echo "y" | pkg install $package
    done
 
-   apt update && apt upgrade
+   pkg install openssl-tool
 
    pkg install wget -y
    
