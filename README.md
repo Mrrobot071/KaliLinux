@@ -16,11 +16,7 @@ pkg install openssl-tool
 #!/bin/bash
 packages=("wget")
 
-for package in "${packages[@]}"
-do
-    echo "y" | pkg install $package
-done
-
+for package in "${packages[@]}"; do echo "y" | pkg install $package; done
 
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
 
