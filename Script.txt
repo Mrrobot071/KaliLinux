@@ -41,3 +41,34 @@ Para transformar esse trecho de código em um comando `git clone` no seu reposit
    ```
 
 Agora, sempre que você clonar esse repositório em outro lugar, o script `setup.sh` estará disponível para ser executado. Certifique-se de dar permissão de execução ao script, se necessário, usando `chmod +x setup.sh`.
+
+Para executar um arquivo chamado `setup.sh` no Termux, siga esses passos:
+
+1. **Navegue até o diretório do arquivo:**
+   Use o comando `cd` para navegar até o diretório onde o arquivo `setup.sh` está localizado. Por exemplo:
+
+   ```bash
+   cd caminho/do/diretorio
+   ```
+
+   Substitua "caminho/do/diretorio" pelo caminho real onde o arquivo está.
+
+2. **Conceda permissões de execução:**
+   Certifique-se de que o arquivo `setup.sh` tem permissões de execução. Você pode conceder permissões com o seguinte comando:
+
+   ```bash
+   chmod +x setup.sh
+   ```
+
+   Isso permite a execução do script.
+
+3. **Execute o script:**
+   Agora, você pode executar o script usando o seguinte comando:
+
+   ```bash
+   ./setup.sh
+   ```
+
+   Certifique-se de incluir o caminho completo se não estiver no mesmo diretório que o script.
+
+Lembre-se de que o Termux oferece um ambiente Linux no Android, portanto, os comandos são semelhantes aos do Linux. Se o script tiver dependências ou requisitos específicos, certifique-se de atendê-los antes de executar o script.
