@@ -1,4 +1,4 @@
-# Automated Kali Linux Installation for Termux
+#Automated Kali Linux Installation for Termux
 
 This script automates the installation of Kali Linux on Termux, making it quick and easy. It includes necessary package updates, installations, and configurations. 
 
@@ -31,18 +31,14 @@ ctrl + x + y + enter
 
 *Ou colar direto:
 
-echo '
-alias pkg="yes | pkg"
+echo 'alias pkg="yes | pkg"
 pkg update
 pkg upgrade
 pkg install openssl-tool
 
 packages=("python" "shell" "php" "git" "wget")
 
-for package in "${packages[@]}"
-do
-    echo "y" | pkg install $package
-done
+for package in "${packages[@]}"; do echo "y" | pkg install $package; done
 
 apt update && apt upgrade
 
